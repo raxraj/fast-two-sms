@@ -1,0 +1,11 @@
+{
+  "name": "fast2sms",
+  "version": "1.0.0",
+  "description": "The Module to send Message using FAST2SMS.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "raxraj",
+  "license": "MIT"
+}
