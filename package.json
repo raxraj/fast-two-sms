@@ -4,7 +4,6 @@
   "description": "The Module to send Message using FAST2SMS.com",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
   },
   "author": "raxraj",
   "license": "MIT",
