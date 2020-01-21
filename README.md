@@ -1,4 +1,4 @@
-# fast-2-sms@1.0.0
+# fast-two-sms
  [![npm version](https://badge.fury.io/js/fast-2-sms.svg)](https://npmjs.org/package/fast-2-sms)  [![minzipped size](https://img.shields.io/bundlephobia/minzip/fast-2-sms.svg)](https://bundlephobia.com/result?p=fast-2-sms)  [![build status](https://img.shields.io/travis/raxraj/fast2sms/master.svg)](https://travis-ci.org/raxraj/fast2sms#master)  [![coverage status](https://coveralls.io/repos/raxraj/fast2sms/badge.svg)](https://coveralls.io/github/raxraj/fast2sms)  [![dependency status](https://david-dm.org/raxraj/fast2sms.svg?theme=shields.io)](https://david-dm.org/raxraj/fast2sms)  [![devDependency status](https://david-dm.org/raxraj/fast2sms/dev-status.svg)](https://david-dm.org/raxraj/fast2sms#info=devDependencies) 
 
 The Module to send Message using FAST2SMS.com node JS API.
@@ -21,8 +21,7 @@ This package is provided in these module formats:
 ```sh
 const fast2sms = require('fast-2-sms')
 
-var options = {authorization = YOUR_API_KEY , message : 'YOUR_MESSAGE_HERE' ,  numbers : ['9999999999','8888888888']} 
-This field is optional, it will use "0" as default value or you can set to "1" for sending flash message.
+var options = {authorization : YOUR_API_KEY , message : 'YOUR_MESSAGE_HERE' ,  numbers : ['9999999999','8888888888']} 
 fast2sms.sendMessage(options)
 
 ```

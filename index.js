@@ -59,5 +59,5 @@ const sendMessage = (props)=>{
 }
 
 module.exports = {
-    sendMessage = sendMessage
+    sendMessage : sendMessage
 }
