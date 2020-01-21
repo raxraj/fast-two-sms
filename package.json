@@ -1,10 +1,9 @@
 {
   "name": "fast-two-sms",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Module to send Message using FAST2SMS.com",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "raxraj",
   "license": "MIT",
   "dependencies": {
