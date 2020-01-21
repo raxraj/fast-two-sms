@@ -1,5 +1,5 @@
 {
-  "name": "fast-2-sms",
+  "name": "fast-two-sms",
   "version": "1.0.0",
   "description": "The Module to send Message using FAST2SMS.com",
   "main": "index.js",
