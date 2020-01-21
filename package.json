@@ -1,5 +1,5 @@
 {
-  "name": "fast2sms",
+  "name": "fast-2-sms",
   "version": "1.0.0",
   "description": "The Module to send Message using FAST2SMS.com",
   "main": "index.js",
@@ -10,5 +10,21 @@
   "license": "MIT",
   "dependencies": {
     "unirest": "^0.6.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raxraj/fast2sms.git"
+  },
+  "keywords": [
+    "fast2sms",
+    "api",
+    "rest",
+    "sms",
+    "send-sms-node"
+  ],
+  "bugs": {
+    "url": "https://github.com/raxraj/fast2sms/issues"
+  },
+  "homepage": "https://github.com/raxraj/fast2sms#readme"
 }
