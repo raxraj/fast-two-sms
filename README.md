@@ -3,13 +3,13 @@
   <a href="https://www.npmjs.com/package/fast-two-sms" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/fast-two-sms.svg">
   </a>
-  <a href="https://github.com/raxraj/fast2sms#readme" target="_blank">
+  <a href="https://github.com/raxraj/fast-two-sms#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/raxraj/fast2sms/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/raxraj/fast-two-sms/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/raxraj/fast2sms/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/raxraj/fast-two-sms/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/raxraj/fast-two-sms" />
   </a>
   <a href="https://twitter.com/raxrajtwit" target="_blank">
