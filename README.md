@@ -21,6 +21,7 @@ The Module to send Message using FAST2SMS.com
 
 ### 🏠 [Homepage](https://github.com/raxraj/fast2sms#readme)
 
+:warning: **V2.0.0 Contains some breaking changes.To download older version get to the bottom of this page.**: 
 
 ## Installation
 Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
@@ -39,13 +40,11 @@ This package is provided in these module formats:
 const fast2sms = require('fast-two-sms')
 
 var options = {authorization : YOUR_API_KEY , message : 'YOUR_MESSAGE_HERE' ,  numbers : ['9999999999','8888888888']} 
-fast2sms.sendMessage(options)
-
+fast2sms.sendMessage(options) //Asynchronous Function.
 ```
-
 Other than Above You may also use following options for more control.
 
-```sh
+```
 
 You may also set the other FAST2SMS options 
 method    -     Method for request (Default : POST)
@@ -53,8 +52,35 @@ sender_id -     A custom name for SMS sender (Default: FSTSMS)
 language  -     english / unicode (Unicode supports other languages such as Hindi) (Default: english)
 route     -     p for promotional and t for transactional (Default: p)
 flash     -     This field is optional, it will use "0" as default value or you can set to "1" for sending flash message. 
+showLogs  -     Default is 'true'. Recommended to not set this explicitly. Set this to false if you don't want any log message to be printed.
 
 ```
+# Get Response Object
+If you have explicitly defined showLogs and set it to 'false', it is highly recommended to get the response object from the server to verify the status.
+
+To recieve the response object use then(), as shown:
+
+```js
+    fast2sms.sendMessage(options).then(response=>{
+      console.log(response)
+    })
+```
+
+If you prefer async/await, it can be done by wrapping the code in an asynchronous function.
+
+```js
+    async function smsSend(options){
+      const response = await fast2sms.sendMessage(options)
+      console.log(response)
+    }
+```
+
+## Installing Older Version
+
+```sh
+  npm install fast-two-sms@1.0.4 --save
+```
+
 ## Author
 
 👤 **Ashutosh Kumar**
