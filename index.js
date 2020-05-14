@@ -1,63 +1,76 @@
-var unirest = require('unirest')
+let chalk = require('chalk');
+const axios = require('axios');
 
-const sendMessage = (props)=>{
-    if(props.method === undefined){
-        props.method='POST'
-    }
-    if(props.sender_id===undefined){
-        props.sender_id='FSTSMS'
-    }
-    if(props.language===undefined){
-        props.language = 'english'
-    }
-    if(props.route===undefined){
-        props.route = 'p'
-    }
-    if(props.flash === undefined){
-        props.flash = 0;
-    }
+const sendMessage = async (props) => {
+	if (props.method === undefined) {
+		props.method = 'POST';
+	}
+	if (props.sender_id === undefined) {
+		props.sender_id = 'FSTSMS';
+	}
+	if (props.language === undefined) {
+		props.language = 'english';
+	}
+	if (props.route === undefined) {
+		props.route = 'p';
+	}
+	if (props.flash === undefined) {
+		props.flash = 0;
+	}
+	if (props.showLogs === undefined) {
+		props.showLogs = true;
+	}
+	//THE REASON TO GO WITH (if) and not (props.method = props.method || 'POST') is for empty String and false values.
 
-    var req = unirest(props.method , "https://www.fast2sms.com/dev/bulk")
+	let url = 'https://www.fast2sms.com/dev/bulk';
+	let nums = props.numbers.join(',');
+	if (props.method === 'GET') {
+		//NO-CACHE ONLY IF GET
+		data = {
+			authorization: props.authorization,
+			sender_id: props.sender_id,
+			message: props.message,
+			language: props.language,
+			route: props.route,
+			numbers: nums,
+			flash: props.flash
+		};
+		headers = {
+			'cache-control': 'no-cache'
+		};
+	} else {
+		headers = {
+			authorization: props.authorization
+		};
 
-    var nums = props.numbers.join(',')  
-    console.log(nums);
-      
-      if(props.method==='GET'){ //NO-CACHE ONLY IF GET
-        req.query({
-            "authorization": props.authorization,
-            "sender_id": props.sender_id,
-            "message": props.message,
-            "language": props.language,
-            "route": props.route,
-            "numbers": nums,
-            "flash" : props.flash
-          });
-        req.headers({
-            "cache-control": "no-cache"
-          });
-      }
-      else{
-        req.headers({
-            "authorization": props.authorization
-          });
-          
-          req.form({
-            "sender_id": props.sender_id,
-            "message": props.message,
-            "language": props.language,
-            "route": props.route,
-            "numbers": nums,
-          });
-      }
-      
-    req.end(function (res) {
-        if (res.error) console.log(res);
-        
-        console.log(res.body);
-        
-    });
-}
+		data = {
+			sender_id: props.sender_id,
+			message: props.message,
+			language: props.language,
+			route: props.route,
+			numbers: nums
+		};
+	}
+	try {
+		const response = await axios({
+			method: props.method,
+			url,
+			data,
+			headers
+		});
+		if (props.showLogs) console.log(chalk.greenBright('Message sent successfully.'));
+		return response.data;
+	} catch (error) {
+		if (error.response.data.status_code === 412)
+			if (props.showLogs) console.log(chalk.red("Can't send message. Authorization key missing or invalid."));
+		if (error.response.data.status_code === 402)
+			if (props.showLogs) console.log(chalk.red("Can't send message. Message text is required."));
+		if (error.response.data.status_code === 405)
+			if (props.showLogs) console.log(chalk.red("Can't send message.Atleast one Number is required."));
+		return error.response.data;
+	}
+};
 
 module.exports = {
-    sendMessage : sendMessage
-}
+	sendMessage: sendMessage
+};
