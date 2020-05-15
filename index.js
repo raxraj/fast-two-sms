@@ -1,5 +1,9 @@
 let chalk = require('chalk');
 const axios = require('axios');
+const Sentry = require('@sentry/node');
+
+//Initialize Sentry
+Sentry.init({ dsn: 'https://8adbc6b47b784d0f8e8ef220a2455413@o386985.ingest.sentry.io/5241759' })
 
 const sendMessage = async (props) => {
 	if (props.method === undefined) {
