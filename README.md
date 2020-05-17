@@ -21,13 +21,11 @@ The Module to send Message using FAST2SMS.com
 
 ### 🏠 [Homepage](https://github.com/raxraj/fast2sms#readme)
 
-:warning: **V2.0.0 Contains some breaking changes.To download older version get to the bottom of this page.**: 
-
 ## Installation
 Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
 
 ```sh
-npm install fast-2-sms --save
+npm install fast-two-sms --save
 ```
 
 This package is provided in these module formats:
@@ -76,6 +74,8 @@ If you prefer async/await, it can be done by wrapping the code in an asynchronou
 ```
 
 ## Installing Older Version
+
+> :warning : ** From V2.0.0 Contains some breaking changes.To download older version run the following command**: 
 
 ```sh
   npm install fast-two-sms@1.0.4 --save
