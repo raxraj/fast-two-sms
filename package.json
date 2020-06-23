@@ -9,7 +9,8 @@
   "dependencies": {
     "@sentry/node": "^5.15.5",
     "axios": "^0.19.2",
-    "chalk": "^4.0.0"
+    "chalk": "^4.0.0",
+    "update-notifier": "^4.1.0"
   },
   "devDependencies": {},
   "repository": {

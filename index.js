@@ -1,6 +1,13 @@
 const chalk = require('chalk');
 const axios = require('axios');
 const Sentry = require('@sentry/node');
+const updateNotifier = require('update-notifier');
+
+//Update Notifications
+const pkg = require('./package.json');
+const notifier = updateNotifier({pkg});
+notifier.notify();
+console.log(notifier.update);
 
 //Initialize Sentry
 Sentry.init({ dsn: 'https://8adbc6b47b784d0f8e8ef220a2455413@o386985.ingest.sentry.io/5241759' })
