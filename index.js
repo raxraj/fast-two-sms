@@ -1,4 +1,4 @@
-let chalk = require('chalk');
+const chalk = require('chalk');
 const axios = require('axios');
 const Sentry = require('@sentry/node');
 
