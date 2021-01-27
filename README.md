@@ -44,15 +44,26 @@ Other than Above You may also use following options for more control.
 
 ```
 
-You may also set the other FAST2SMS options 
+You may also set the other FAST2SMS options :-
 method    -     Method for request (Default : POST)
 sender_id -     A custom name for SMS sender (Default: FSTSMS)
 language  -     english / unicode (Unicode supports other languages such as Hindi) (Default: english)
 route     -     p for promotional and t for transactional (Default: p)
 flash     -     This field is optional, it will use "0" as default value or you can set to "1" for sending flash message. 
 showLogs  -     Default is 'true'. Recommended to not set this explicitly. Set this to false if you don't want any log message to be printed.
+```
+You can also send Quick Transanctional Message using this module, read about Quick transactional API for Fast2sms here - [fast2sms.com/quick-transactional-api]{https://docs.fast2sms.com/#quick-transactional-api}
 
 ```
+To send 'Quick Transactional' Messages change the following options :-
+route            -     qt
+variables        -     Variables used like: "{#AA#}|{#EE#}|{#CC#}" seperated by pipe "|".
+variables_values -     Above variables values like: "Rahul|8888888888|6695" seperated by pipe "|".
+
+```
+
+
+
 # Get Response Object
 If you have explicitly defined showLogs and set it to 'false', it is highly recommended to get the response object from the server to verify the status.
 
@@ -71,6 +82,12 @@ If you prefer async/await, it can be done by wrapping the code in an asynchronou
       const response = await fast2sms.sendMessage(options)
       console.log(response)
     }
+```
+
+# Get Wallet Balance
+You can now, fetch your wallet balance using this module just call the function `getWalletBalance(authorization: String)`
+```js
+const {wallet} = await fast2sms.getWalletBalance(authorization) //{returns {return:true, wallet: XX.XX}}
 ```
 
 ## Installing Older Version
