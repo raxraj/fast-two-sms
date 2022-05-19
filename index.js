@@ -24,7 +24,7 @@ let getWalletBalance = async function (authorization) {
 };
 
 const sendMessage = async (props) => {
-  const url = "https://www.fast2sms.com/dev/bulk";
+  const url = "https://www.fast2sms.com/dev/bulkV2";
   const { data, headers } = generateDataAndHeadersForApi(props);
   const { method, showLogs } = props;
   try {
